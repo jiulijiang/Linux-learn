@@ -130,3 +130,34 @@
     - `hostnamectl set-hostname [新的主机名称]`修改主机名称
 - 域名解析
     - 域名解析：将域名映射为ip地址
+### 解压和压缩
+-  压缩格式：
+    - `zip`: 格式: Linux、Windows、MacOS,常用
+    - `7zip`: Windows系统常用
+    - `rar`: Windows系统常用
+    - `tar`: Linux、MacOs常用
+    - `gzip`: Linux、MacOs常用
+- `tar`命令：
+    - .tar,称之为tarball,归档文件，即简单的将文件组装到一个.tar的文件内，并没有太多文件体积的减少，仅仅是简单的封装
+    - .gz,也常见为.tar.gz,gzip格式压缩文件，即使用gzip压缩算法将文件压缩到一个文件内,可以极大的减少压缩后的体积
+    - 语法`tar [-c -v -x  -z -C -f] [参数1] [参数2]···[参数N]`：
+    - `-c`：创建tar文件,压缩模式
+    - `-v`：显示压缩过程
+    - `-x`：解压tar文件,解压模式
+    - `-z`：使用gzip压缩算法
+    - `-C`：指定解压目录,目的地
+    - `-f`：指定tar文件名
+    - 常用组合：
+        - `tar -zcvf [文件名].tar.gz [目录]`：创建gzip压缩文件
+        - `tar -zxvf [文件名].tar.gz [目录]`：解压gzip压缩文件
+        - `tar -cvf [文件名].tar.gz [目录]`：创建tar压缩文件
+        - `tar -xvf [文件名].tar.gz [目录]`：解压tar压缩文件
+        - `tar -zxvf [文件名] -C [目录]`：解压tar压缩文件到指定目录
+- `zip`命令：
+    - 语法：`zip [-r] [参数1] [参数2] ··· [参数N]`
+    - `-r`：递归压缩文件夹
+    - 示例：`zip -r [文件名].zip [目录]`
+- `unzip`命令：
+    - 语法：`unzip [-d] 参数`
+    - `-d`：指定解压目录
+    - 示例：`unzip [文件名] -d [目录]`
